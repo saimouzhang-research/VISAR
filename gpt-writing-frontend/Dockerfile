@@ -6,17 +6,10 @@ ENV PATH /app/frontend-server/node_modules/.bin:$PATH
 
 COPY . .
 
-# === Build the frontend ===
-# Install dependencies
-# RUN npm ci --legacy-peer-deps
 RUN npm install --legacy-peer-deps
+RUN npm run build
 
-# # Build the app
-# RUN npm run build
+RUN npm install -g serve
 
-# # === Run ===
-# ENV NODE_ENV=production
-
-# Expose port on which the server will on
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["serve", "-s", "build", "-l", "3000"]
