@@ -9,7 +9,7 @@ COPY . .
 RUN npm install --legacy-peer-deps
 RUN npm install ajv@^8.0.0 --legacy-peer-deps
 RUN npm run build
-RUN npm install -g serve@13
+RUN npm install -g http-server
 
 EXPOSE 3000
-CMD ["serve", "-s", "build", "--listen", "tcp://0.0.0.0:3000"]
+CMD ["http-server", "build", "-p", "3000"]
