@@ -7,6 +7,7 @@ ENV PATH /app/frontend-server/node_modules/.bin:$PATH
 COPY . .
 
 RUN npm install --legacy-peer-deps
+RUN npm install ajv@^8.0.0 --legacy-peer-deps
 RUN npm run build
 
 RUN npm install -g serve
