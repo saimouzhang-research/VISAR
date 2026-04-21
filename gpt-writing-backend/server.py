@@ -15,11 +15,11 @@ max_tokens = 2048
 enablePreload = False
 test = False
 
-with open("deepseek_key.json") as key_file:
-    client = OpenAI(api_key=json.load(key_file)["key"], base_url="https://api.deepseek.com")
+import os
+client = OpenAI(api_key=os.environ["DEEPSEEK_KEY"], base_url="https://api.deepseek.com")
 
-with open('mongoDB_key.json') as key_file:
-    mongoDB_key = json.load(key_file)['key']
+mongoDB_key = os.environ["MONGODB_KEY"]
+
 
 # Update your mongoDB key here. You need to create a new mongoDB database called "gptwriting", and create collections called "users" and "interactionData" in the database.
 mongo_client = MongoClient(mongoDB_key)
