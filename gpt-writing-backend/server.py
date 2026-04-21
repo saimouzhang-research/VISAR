@@ -23,7 +23,8 @@ mongoDB_key = os.environ["MONGODB_KEY"]
 
 
 # Update your mongoDB key here. You need to create a new mongoDB database called "gptwriting", and create collections called "users" and "interactionData" in the database.
-mongo_client = MongoClient(mongoDB_key)
+import certifi
+mongo_client = MongoClient(mongoDB_key, tlsCAFile=certifi.where())
 db = mongo_client.gptwriting
 
 
