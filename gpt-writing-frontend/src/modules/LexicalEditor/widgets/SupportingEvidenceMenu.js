@@ -161,7 +161,7 @@ export default function SupportingEvidenceMenu ({ editor }) {
       }
 
       // IP: https://visar.app:8088
-      fetch('/supportingArguments', {
+      fetch('https://visar-production.up.railway.app/supportingArguments', {
         method: 'POST',
         mode: 'cors',
         headers: {

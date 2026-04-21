@@ -95,7 +95,7 @@ export default function ControlConditionMenu ({ editor }) {
   const fetchGPTResposne = useCallback(nodeKey => {
     const prompt = $getNodeByKey(nodeKey).getTextContent()
     editor.dispatchCommand(SHOW_LOADING_COMMAND, {show: true})
-    fetch('/completion', {
+    fetch('https://visar-production.up.railway.app/completion', {
       method: 'POST',
       mode: 'cors',
       headers: {

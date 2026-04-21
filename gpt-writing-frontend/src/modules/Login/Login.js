@@ -48,7 +48,7 @@ export default function SignIn () {
   const navigate = useNavigate()
 
   async function authenticate () {
-    const res = await fetch('/signup', {
+    const res = await fetch('https://visar-production.up.railway.app/signup', {
       method: 'POST',
       mode: 'cors',
       headers: {

@@ -47,7 +47,7 @@ export const logInteractionData = createAsyncThunk(
   'flow/logInteractionData',
   async (args, { getState }) => {
 
-    const res = await fetch('/logInteractionData', {
+    const res = await fetch('https://visar-production.up.railway.app/logInteractionData', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -91,7 +91,7 @@ export const generateFromDepGraph = createAsyncThunk(
       }
     }
 
-    const res = await fetch('/generateFromDepGraph', {
+    const res = await fetch('https://visar-production.up.railway.app/generateFromDepGraph', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -120,7 +120,7 @@ export const generateFromSketch = createAsyncThunk(
   async (editor, { getState }) => {
     const state = getState()
 
-    const res = await fetch('/generateFromSketch', {
+    const res = await fetch('https://visar-production.up.railway.app/generateFromSketch', {
       method: 'POST',
       mode: 'cors',
       headers: {

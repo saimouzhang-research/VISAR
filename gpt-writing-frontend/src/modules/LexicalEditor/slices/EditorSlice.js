@@ -42,7 +42,7 @@ export const generateRewrite = createAsyncThunk(
     // const state = getState();
     console.log("[generateRewrite] args:", args)
     // const { basePrompt, mode, furInstruction, curSent } = args;
-    const res = await fetch("/rewrite", {
+    const res = await fetch("https://visar-production.up.railway.app/rewrite", {
       method: "POST",
       mode: "cors",
       headers: {

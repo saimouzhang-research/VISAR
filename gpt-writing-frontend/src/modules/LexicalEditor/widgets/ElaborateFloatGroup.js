@@ -151,7 +151,7 @@ export default function ElaborateFLoatingGroup({ editor }) {
     // console.log(nodes)
     setPromptedText(selected_text);
     
-    const fetchPromise = fetch('/keyword', {
+    const fetchPromise = fetch('https://visar-production.up.railway.app/keyword', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -180,7 +180,7 @@ export default function ElaborateFLoatingGroup({ editor }) {
     setFetchingAlertOpen(true);
 
     // IP: https://visar.app:8088
-    fetch("/prompts", {
+    fetch("https://visar-production.up.railway.app/prompts", {
       method: "POST",
       mode: "cors",
       headers: {
