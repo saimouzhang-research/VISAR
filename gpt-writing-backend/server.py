@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 from pymongo import MongoClient
 
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, origins=["https://nurturing-mercy-production-57b3.up.railway.app", "http://localhost:3000"])
 app.config['CORS_HEADERS'] = 'Content-Type'
 model_type = "deepseek-chat"
 tempature = 0.6
